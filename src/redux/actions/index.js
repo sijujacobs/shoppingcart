@@ -1,4 +1,4 @@
-import {GET_PHOTOS} from '../constants/index';
+import {GET_PHOTOS, ADD_TO_CART, REMOVE_ITEM} from '../constants/index';
 import axios from 'axios';
 
 export const getPhotos = () => {
@@ -36,7 +36,7 @@ export const getPhotosByThunkAxios = () => {
   return (dispatch) => {
     return axios.get("https://jsonplaceholder.typicode.com/photos")
             // .then(response => {dispatch(fetchDataFormReslt(response.data))})
-            .then(response => dispatch({ type: 'GET_PHOTOS', payload: response.data }))
+            .then(response => dispatch({ type: 'GET_PHOTOS', payload: response.data.splice(4900) }))
             .catch(err => {console.log("getPhotosByThunkAxios :: ERROR : ", err)})
   }
 }
@@ -47,4 +47,20 @@ export const getPhotosByThunkAxios = () => {
 //     payload : data
 //   }
 // }
+
+
+
+export const addToCart = (selectedItem) => {
+  return {
+    type    : ADD_TO_CART,
+    payload : selectedItem
+  }
+}
+
+export const removeItem = (selectedItem) => {
+  return {
+    type    : REMOVE_ITEM,
+    payload : selectedItem
+  }
+}
 

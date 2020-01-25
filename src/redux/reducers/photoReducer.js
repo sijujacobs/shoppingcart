@@ -5,7 +5,6 @@ const initialState = {
     photos : []
 }
 const photoReducer = (state = initialState, action) => {
-    console.log('PhotoReducer :: state - ', state , ', action - ', action);
     switch(action.type){
         case GET_PHOTOS:
             return {

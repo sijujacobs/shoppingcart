@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getPhotos, getPhotosByThunkAxios} from './redux/actions/index';
+import {getPhotosByThunkAxios} from './redux/actions/index';
 import Header from './components/Header';
 import Cart from './components/Cart';
 import ProductList from './components/ProductList';
@@ -10,7 +10,6 @@ import './css/style.css';
 
 class App extends React.Component{
   componentDidMount(){
-	console.log(' componentDidMount :: props : ', this.props);
 	// this.props.getPhotos();
 	this.props.getPhotosByThunkAxios();
   }
@@ -26,7 +25,6 @@ class App extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
 	return{
-		getPhotos : () => dispatch(getPhotos()),
 		getPhotosByThunkAxios : () => dispatch(getPhotosByThunkAxios()),
 		
 	}  
