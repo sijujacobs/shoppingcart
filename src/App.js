@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
+import {getPhotos, getPhotosByThunkAxios} from './redux/actions/index';
+import Header from './components/Header';
+import Cart from './components/Cart';
+import ProductList from './components/ProductList';
+import Footer from './components/Footer';
+import './css/style.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  componentDidMount(){
+	console.log(' componentDidMount :: props : ', this.props);
+	// this.props.getPhotos();
+	this.props.getPhotosByThunkAxios();
+  }
+  render(){
+    return(<div className="appContainer">
+			<Header/>
+			<ProductList/>
+			<Cart/>
+			<Footer />
+		 </div>)
+  }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+	return{
+		getPhotos : () => dispatch(getPhotos()),
+		getPhotosByThunkAxios : () => dispatch(getPhotosByThunkAxios()),
+		
+	}  
+}
+
+const connectedApp = connect(null, mapDispatchToProps)(App);
+
+export default connectedApp;
