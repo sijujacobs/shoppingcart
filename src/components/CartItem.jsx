@@ -2,6 +2,7 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import {removeItem} from '../redux/actions/index';
+// import {CSSTransition} from 'react-transition-group';
 
 const CartItem = (props) => {
     const removeItemHandler = (selectedProduct) => {
