@@ -18,6 +18,8 @@ html, body {
       grid-template-areas: 'header header' 'productList cart' 'footer footer';
   -ms-grid-rows: 120px auto 100px;
       grid-template-rows: 120px auto 100px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
 .header {
@@ -62,6 +64,8 @@ html, body {
 .statusSection .cartStatus {
   background-color: black;
   padding: 10px;
+  width: 200px;
+  text-align: right;
   -webkit-box-shadow: 2px 5px 12px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 2px 5px 12px 0px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
