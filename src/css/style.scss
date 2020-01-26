@@ -178,3 +178,35 @@ html, body{
     box-shadow: $topBoxShadow;
     margin-top: 30px;
 }
+
+@keyframes expand {
+    from {
+      transform: scale(0);
+      opacity: 0;
+      background: #5470B0;
+    }
+  }
+
+  .fadeItem {
+    animation: expand .5s ease-in-out;
+  }
+  
+  
+
+// .item-enter {
+//     opacity: 0;
+//     transform: scale(0.9);
+//   }
+//   .item-enter-active {
+//     opacity: 1;
+//     transform: translateX(0);
+//     transition: opacity 300ms, transform 300ms;
+//   }
+//   .item-exit {
+//     opacity: 1;
+//   }
+//   .item-exit-active {
+//     opacity: 0;
+//     transform: scale(0.9);
+//     transition: opacity 300ms, transform 300ms;
+//   }
